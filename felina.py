@@ -5,7 +5,7 @@ import sys
 
 from src.config import FelinaConfig
 from src.browser import BrowserType
-from src.main import Felina
+from src.app import Felina
 
 def main():
     argparser = argparse.ArgumentParser()
@@ -21,7 +21,8 @@ def main():
     else:
         felina_config.browser_type = BrowserType.FIREFOX
 
-    felina_app = Felina(felina_config)
+    #felina_app = Felina(felina_config)
+    felina_app = Felina()
     felina_app.run()
 
 
