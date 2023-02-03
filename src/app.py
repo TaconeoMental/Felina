@@ -1,15 +1,16 @@
-import sys
 from contextlib import contextmanager, redirect_stdout, redirect_stderr
+import sys
 
 from textual.app import App
 
-from src.gui import MainScreen
+from src.gui import MainScreen, HelpScreen
 
 
 class Felina(App):
     CSS_PATH = "gui/felina.css"
     SCREENS = {
-        "main": MainScreen
+        "main": MainScreen,
+        "help": HelpScreen
     }
 
     BINDINGS = []
