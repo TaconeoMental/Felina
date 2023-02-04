@@ -1,4 +1,5 @@
 from contextlib import contextmanager, redirect_stdout, redirect_stderr
+from pathlib import Path
 import sys
 
 from textual.app import App
@@ -7,10 +8,11 @@ from src.gui import MainScreen, HelpScreen
 
 
 class Felina(App):
-    CSS_PATH = "gui/felina.css"
+    CSS_PATH = Path(__file__).parent / "gui" / "felina.css"
     SCREENS = {
         "main": MainScreen,
-        "help": HelpScreen
+        "help": HelpScreen,
+        #"tutorial": TutorialScreen
     }
 
     BINDINGS = []

@@ -1,9 +1,10 @@
 from textual.binding import Binding
-from textual.containers import Horizontal, Container
+from textual.containers import Horizontal, Container, Vertical
 from textual.screen import Screen
 from textual.widgets import Header, Footer
 
 from .viewer import Viewer
+from .hint import HintList
 
 class MainScreen(Screen):
     BINDINGS = [
@@ -13,7 +14,5 @@ class MainScreen(Screen):
 
     def compose(self):
         yield Header()
-        yield Horizontal(
-            Container(Viewer(id="viewer"))
-        )
         yield Footer()
+        yield HintList(id="hint-list")

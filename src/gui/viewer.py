@@ -11,10 +11,8 @@ class Viewer(Static):
         Binding("k", "up", "Up", key_display="k")
     ]
 
-    def __init__(self, *, name=None, id=None, classes=None):
+    def __init__(self, name=None, id=None, classes=None):
         super().__init__(name=name, id=id, classes=classes)
-        self._content_height = None
-        self._content_width = None
         self.show_syntax("console.log('hola')")
 
     def show_syntax(self, code):
